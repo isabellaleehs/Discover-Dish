@@ -15,6 +15,8 @@ Discover Dish requires:
 
 Just run ```python3 manage.py runserver``` to open Django on your browzer.
 
+Note: If running on OS X, you might have to also install ```lxml``` by running ```pip3 install lxml```.
+
 ## --How it works--
 Users input their preferences into a form, which then scrapes Yelp for the restaurant's elite reviewers, scrapes elite reviewer profiles, and ranks all the restaurants highly reviewed by elite reviewers according to an algorithm. Our application relies on collaborative filtering to make personalized recommendations for users; we look for elite reviewers who liked the user's favorite restaurant, and look at the other restaurants the elites liked to make recommendations to the user. 
 
