@@ -1,0 +1,61 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #faf0e6;
+}
+
+.results .container {
+	margin: 10px 10px;
+    padding: 10px 10px;
+}
+
+#name {
+  text-align: center;
+  font-size: 65px;
+  padding-top: 10px;
+  padding-bottom: 30px; 
+  font-weight: bold;
+  text-transform: uppercase; 
+  border-bottom: 2px solid black;
+}
+
+.sub-text {
+  font-size: 18px;
+  padding: 10px 0px;
+  display: block; 
+}
+
+#form {
+  margin-top: 20px;
+}
+
+#table-head {
+	padding: 10px;
+}
+
+.responsive {
+  width: 100%;
+  height: auto;
+}
+
+img {
+	border: 2px solid #ddd;
+  display: block;
+  margin-left: auto;
+  padding: 10px 10px;
+}
+
+input[type=submit] {
+  font-size: 14px;
+  background-color: #800000;
+  border: 1px;
+  border-color: black;
+  color: white;
+  padding: 10px 20px;
+  margin: 10px 0px;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: bold;
+}

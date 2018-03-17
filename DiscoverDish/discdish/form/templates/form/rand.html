@@ -1,0 +1,66 @@
+{% load static %}
+{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html leng="en">
+    <head>
+        <title>Discover Dish</title>
+
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/results.css' %}" />
+    </head>
+
+    <body>
+        <!-- Header -->
+        <header class="intro-text" id="head">
+            <div class="container" id="banner">
+                <h1 class="name" id="name">Discover Dish</h1>
+            </div>
+            <div class = "container" id="information">
+                <h2 class="sub-text">A random recommendation you might like:</h2>
+            </div>
+        </header>
+
+        <!-- Form -->
+        <div class="container">
+            <table class="results" >
+                <tr class="result-item">
+                    <th> Restaurant: </th>
+                    <td class="result-row"> {{ name }} </td>
+                </tr>
+                <tr class="result-item">
+                    <th> Cuisine: </th>
+                    <td class="result-row"> {{ cuisine }} </td>
+                </tr>
+                <tr class="result-item">
+                    <th> Location: </th>
+                    <td class="result-row"> {{ location }} </td>
+                </tr>
+                <tr class="result-item">
+                    <th> Rating: </th>
+                    <td class="result-row"> {{ rating }} </td>
+                </tr>
+                <tr class="result-item">
+                    <th> Price: </th>
+                    <td class="result-row"> {{ price }} </td>
+                </tr>
+                <tr class="result-item">
+                    <th> Open Now: </th>
+                    <td class="result-row"> {{ open_now }} </td>
+                </tr>
+            </table>
+        </div>
+        <div class="container" id="form">
+            <form action="{% url 'rand' %}" method="get">
+                {% csrf_token %}
+                <input type="submit" name="like" value="I like it, but I want something else." />
+                <input type="submit" name="dislike" value="I don't like this, give me something else." />
+                <input type="submit" name="done" value="I'm satisfied with my recommendation." />
+            </form>
+        </div>
+
+
+    </body>
+
+</html>

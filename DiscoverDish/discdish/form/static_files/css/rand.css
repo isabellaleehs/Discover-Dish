@@ -1,0 +1,26 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.results .container {
+    padding: 50px;
+}
+
+#name {
+  font-size: 65px;
+  padding-top: 10px;
+  padding-bottom: 10px; 
+  font-weight: bold;
+  text-transform: uppercase; 
+}
+
+.sub-text {
+  font-size: 18px;
+  display: block; 
+}
+
+#table-head {
+	padding: 10px;
+}

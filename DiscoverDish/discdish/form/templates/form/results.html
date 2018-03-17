@@ -1,0 +1,76 @@
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html leng="en">
+    <head>
+        <title>Discover Dish Recommendations</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/results.css' %}" />
+    </head>
+    <body>
+    	<!-- Header -->
+        <header class="intro-text" id="head">
+            <div class="container" id="banner">
+                <h1 class="name" id="name">Discover Dish</h1>
+            </div>
+            <div class = "container" id="information">
+                <h2 class="sub-text">Based on your favorite restaurant and cuisine, we've picked the top 3 new recommendations closest to your city:</h2>
+            </div>
+        </header>
+
+        <section>
+            <div class="container">
+                <table class="results">
+                    {% for result in results %}
+                    <tr class="result-item" id="table-head">
+                        <th> Recommendation {{ forloop.counter }} </th>
+                    </tr>
+                    <tr class="result-item">
+                        <th> Restaurant: </th>
+                        <td class="result-row"> {{ result.1.name }} </td>
+                    </tr>
+                    <tr class="result-item">
+                        <th> Cuisine: </th>
+                        <td class="result-row"> {{ result.1.cuisine }} </td>
+                    </tr>
+                    <tr class="result-item">
+                        <th> Location: </th>
+                        <td class="result-row"> {{ result.1.address }} </td>
+                    </tr>
+                    <tr class="result-item">
+                        <th> Rating: </th>
+                        <td class="result-row"> {{ result.1.rating }} </td>
+                    </tr>
+                    <tr class="result-item">
+                        <th> Price: </th>
+                        <td class="result-row"> {{ result.1.price }} </td>
+                    </tr>
+                     <tr class="result-item">
+                        <th> Open Now: </th>
+                        <td class="result-row"> {{ result.1.open_now }} </td>
+                    </tr>
+                        {% if result.1.open_table_link != "No open table" %}
+                        <tr class="result-item">
+                            <th> Open Table: </th>
+                            <td class="result-row"> {{ result.1.open_table_link }} </td>
+                        </tr>
+                        {% endif %}
+                    {% endfor %}
+                </table>
+            </div>
+            <div class="container" id="map">
+                <h4 class="title"><b>Map of Cuisines</b></h4>
+                <img class="responsive" src="{% static "img/visualization.png" %}" alt="Map"/>
+            </div>
+            <div class="container" id="form">
+                <form action="{% url 'get_list' %}" method="get">
+                    {% csrf_token %}
+                    <input type="submit" name="back" value="Back" />
+                </form>
+            </div>
+        </section>
+
+    </body>
+</html>
