@@ -29,6 +29,7 @@ adding time.sleep between calls, and different packages such as urllib and reque
 NOTE: for the main submission page, it may take around a minute to run due to the amount of webscraping necessary. 
 
 ----------DESCRIPTION OF FILES----------
+
 main.py:
 	This file features the functions that put together the backend of the program.
 	get_recommendations() is the main traversal route that takes in the user's inputs
